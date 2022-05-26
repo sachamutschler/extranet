@@ -17,20 +17,19 @@
         </div>
     </div>
         <div id="dossier_link">
-            <a href="menu-dossier.php"><img src="resources/img/dossier.png" alt="image" class="dossier" onclick="window.location.href='menu-dossier.php'"><!-- image par freepik --></a>
-            <a href="menu-dossier.php"><h1 id="titre" class="titre" onclick="window.location.href='menu-dossier.php' ">Portfolio <br>Sacha Mutschler</h1></a>
+            <a href="inscription.php"><img src="resources/img/ra16.png" alt="image" class="dossier" onclick="window.location.href='menu-dossier.php'"><!-- image par freepik --></a>
+            <a href="inscription.php"><h1 id="titre" class="titre" onclick="window.location.href='menu-dossier.php' ">Inscription</h1></a>
         </div>
+        <div id="dossier_link">
+            <a href="connexion.php"><img src="resources/img/ra16.png" alt="image" class="dossier"></a>
+            <a href="connexion.php"><h2 id="titre" class="titre">Connexion</h2></a>
+        </div>';
+    
     
     <div id="navbar">
         <?php 
             require('menu.php');
         ?>
-        <!-- <button class="button-start-menu logo-vert" id="logo-vert">
-        
-            <img src="resources/img/xp-logo.PNG" alt="" class="logo_windows">
-            <p class="start">Démarrer</p>
-           démarrer
-        </button> -->
         <button class="logo-vert button-start-menu">
                 <img src="resources/img/Windows_logo.png" alt="" class="logo-windows">
                 start

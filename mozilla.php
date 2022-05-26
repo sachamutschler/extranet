@@ -7,6 +7,7 @@
             <div class="title-bar">
                 <div class="title-bar-text">Mozilla Firefox</div>
                     <div class="title-bar-controls">
+                    <button aria-label="Maximize" onclick="maximize()"></button>
                     <button aria-label="Close" onclick="window.location.href='index-copy.php'"></button>
                 </div>
             </div>

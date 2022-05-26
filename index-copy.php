@@ -1,11 +1,19 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <?php include('head.php'); ?>
 <body>
         <div id="dossier_link">
-            <a href="menu-dossier.php"><img src="resources/img/dossier.png" alt="image" class="dossier" onclick="window.location.href='menu-dossier.php'"><!-- image par freepik --></a>
-            <a href="menu-dossier.php"><h1 id="titre" class="titre" onclick="window.location.href='menu-dossier.php'">Portfolio <br>Sacha Mutschler</h1></a>
+            <a href="menu-dossier.php"><img src="resources/img/ra16.png" alt="image" class="dossier" onclick="window.location.href='menu-dossier.php'"><!-- image par freepik --></a>
+            <a href="menu-dossier.php"><h1 id="titre" class="titre" onclick="window.location.href='menu-dossier.php'">Inscription</h1></a>
         </div>
+        <div id="dossier_link">
+            <a href="index.php"><img src="resources/img/ra16.png" alt="image" class="dossier"></a>
+            <a href="index.php"><h2 id="titre" class="titre">Connexion</h2></a>
+        </div>';
     
     <div id="navbar">
         <?php 

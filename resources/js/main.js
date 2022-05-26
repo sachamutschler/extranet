@@ -9,7 +9,9 @@
         minute: '2-digit'
     });
 
-
+function maximize() {
+    maximize.classList.add.toggle("changement");
+}
  
 
 
@@ -38,3 +40,9 @@
     
 
 })()
+
+const maximizeArea = document.querySelector(".fichier");
+
+function maximize() {
+    maximizeArea.classList.toggle("changement");
+}

@@ -148,24 +148,24 @@
                                         <span class="first">My Music</span>
                                     </div>
                                 </li>
-                                <li onclick="window.location.href='e5.php'">
+                                <li onclick="window.location.href='inscription.php'">
                                     <img class="menu-icon" src="resources/img/preferences-desktop-display.png">
                                     <div>
-                                        <span class="first">Epreuve E5</span>
+                                        <span class="first">Inscription</span>
                                     </div>
                                 </li>
-                                <li onclick="window.location.href='e4.php'">
+                                <li onclick="window.location.href='note.php'">
                                     <img class="menu-icon" src="resources/img/photoweb.png">
                                     <div>
-                                        <span class="first">Epreuve E4</span>
+                                        <span class="first">Bloc-Notes</span>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="applications-devider apps">
-                                <li onclick="window.location.href='cv.php'">
+                                <li>
                                     <img class="menu-icon" src="resources/img/application-pdf.png">
                                     <div>
-                                        <span class="first">Mon CV</span>
+                                        <span class="first">Panneau de configuration</span>
                                     </div>
                                 </li>
                                 <li>
