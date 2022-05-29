@@ -1,5 +1,3 @@
-
-
 <?php
 if (isset($_POST['connexion']) && !empty($_POST['username']) && !empty($_POST['password'])){
     $errors = [];
@@ -17,16 +15,23 @@ if (isset($_POST['connexion']) && !empty($_POST['username']) && !empty($_POST['p
     }
     if (!$errors){
         echo "connexion reussi";
-        $_SESSION['identifiant'] = $selectUsername['id'];
+        $_SESSION['id'] = $selectUsername['id'];
         $_SESSION['identifiant'] = $selectUsername['identifiant'];
         $_SESSION['nom'] = $selectUsername['nom'];
         $_SESSION['prenom'] = $selectUsername['prenom'];
-        $this->redirect('index-copy.php');
-        $selectUsername->getIsAdmin();
-        if ($selectUsername['etat'] == 1){
-            $_SESSION['admin'] = true;
+        
+        if ($selectUsername['identifiant'] == 'administrateur'){
+            $_SESSION['admin'] = 1;
             
+        }   
+        else {
+            $_SESSION['admin'] = 0;
         }
+
+        //redirect to index-copy.php
+        echo "<script> window.location.replace('index-copy.php') </script>";
+
+
     }else{
         foreach ($errors as $error) {
             echo $error;

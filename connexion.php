@@ -4,16 +4,22 @@ require_once ('SQL/connexion_bdd.php');
 require_once ('Class/Autoloader.php');
 Autoloader::register();
 
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
-<?php include('head.php'); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Sacha Mutschler</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <link rel="stylesheet" href="resources/css/menu.css">
+    <link rel="stylesheet" href="resources/css/contact.css">
+</head>
+
+
 <body>
-    
-    <?php // include ('form.php'); ?>
     <div class="fichier window" id="fichier">
         <div class="navbar_dossier">
             <div class="title-bar">
@@ -101,7 +107,7 @@ Autoloader::register();
                 <div class="liste-dossier">
                     <h5 class="titre-liste-dossier">Vous pouvez vous inscrire ici : </h5>
                     <div class="double-column">
-                        <?php require_once('form_connexion.php'); ?>
+                        <?php require('form_connexion.php'); ?>
                     </div>
                     
                 </div>

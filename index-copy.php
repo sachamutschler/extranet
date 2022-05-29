@@ -6,15 +6,60 @@ session_start();
 <html lang="fr">
 <?php include('head.php'); ?>
 <body>
+<?php  
+    
+    // if the user is not connected, we display the login and the register page
+
+    if(!isset($_SESSION['id'])){
+        
+        ?>
         <div id="dossier_link">
-            <a href="menu-dossier.php"><img src="resources/img/ra16.png" alt="image" class="dossier" onclick="window.location.href='menu-dossier.php'"><!-- image par freepik --></a>
-            <a href="menu-dossier.php"><h1 id="titre" class="titre" onclick="window.location.href='menu-dossier.php'">Inscription</h1></a>
+            <a href="inscription.php"><img src="resources/img/ra16.png" alt="image" class="dossier"><!-- image par freepik --></a>
+            <a href="inscription.php"><h1 id="titre" class="titre">Inscription</h1></a>
         </div>
         <div id="dossier_link">
-            <a href="index.php"><img src="resources/img/ra16.png" alt="image" class="dossier"></a>
-            <a href="index.php"><h2 id="titre" class="titre">Connexion</h2></a>
-        </div>';
+            <a href="connexion.php"><img src="resources/img/ra16.png" alt="image" class="dossier"></a>
+            <a href="connexion.php"><h2 id="titre" class="titre">Connexion</h2></a>
+        </div>
+        <?php
+    }
+    //if the user is connected and the user is admin, we display the dashboard and the notepad link
+    if (isset($_SESSION['id']) && $_SESSION['admin'] == 1) {
+        ?>
+        <div id="dossier_link">
+            <a href="dashboard.php"><img src="resources/img/my_computer.png" alt="image" class="dossier"><!-- image par freepik --></a>
+            <a href="dashboard.php"><h1 id="titre" class="titre">Dashboard</h1></a>
+        </div>
+        <div id="dossier_link">
+            <a href="notepad.php"><img src="resources/img/editor.png" alt="image" class="dossier"></a>
+            <a href="notepad.php"><h2 id="titre" class="titre">Notepad</h2></a>
+        </div>
+        <!-- Deconnexion link -->
+        <div id="dossier_link">
+            <a href="deconnexion.php"><img src="resources/img/Shutdown_Box_Red.png" alt="image" class="dossier"></a>
+            <a href="deconnexion.php"><h2 id="titre" class="titre">Déconnexion</h2></a>
+        </div>
+        <?php
+    }
+    //if the user is connected and the user is not admin, we only display the notepad link
+
+    else if (isset($_SESSION['id']) && $_SESSION['admin'] == 0) {
+        ?>
+        <div id="dossier_link">
+            <a href="notepad.php"><img src="resources/img/editor.png" alt="image" class="dossier"></a>
+            <a href="notepad.php"><h2 id="titre" class="titre">Notepad</h2></a>
+        </div>
+        <div id="dossier_link">
+            <a href="deconnexion.php"><img src="resources/img/Shutdown_Box_Red.png" alt="image" class="dossier"></a>
+            <a href="deconnexion.php"><h2 id="titre" class="titre">Déconnexion</h2></a>
+        </div>
+        <?php
+        
+        
+    }
     
+    ?>
+
     <div id="navbar">
         <?php 
             require('menu.php');
