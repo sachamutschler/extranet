@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once ('SQL/connexion_bdd.php');
 require_once ('Class/Autoloader.php');
+require ('SQL/connexion_bdd.php');
 Autoloader::register();
 
 ?>

@@ -127,9 +127,9 @@ a{
 }
 #dossier_link{
     text-align: center;
-    margin-top: 15%;
+    margin-top: 5%;
     width: fit-content;
-    margin-left: 45%;
+    margin-left: 5%;
 }
 
 
@@ -477,6 +477,22 @@ iframe{
 }
 .certifs{
     display: flex;
+}
+
+/* Notepad */
+
+.tchat{
+    width: 98%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+}
+.form-notepad{
+    width: 98%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+}
+.notepad-window{
+    background: white !important;
 }
 
 

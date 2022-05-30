@@ -40,6 +40,7 @@ session_start();
             <a href="deconnexion.php"><h2 id="titre" class="titre">Déconnexion</h2></a>
         </div>
         <?php
+
     }
     //if the user is connected and the user is not admin, we only display the notepad link
 
