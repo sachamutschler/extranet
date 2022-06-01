@@ -17,8 +17,12 @@ if (isset($_POST['connexion']) && !empty($_POST['username']) && !empty($_POST['p
         echo "connexion reussi";
         $_SESSION['id'] = $selectUsername['id'];
         $_SESSION['identifiant'] = $selectUsername['identifiant'];
+        $_SESSION['password'] = $selectUsername['mot_de_passe'];
         $_SESSION['nom'] = $selectUsername['nom'];
         $_SESSION['prenom'] = $selectUsername['prenom'];
+        $_SESSION['email'] = $selectUsername['mail'];
+        $_SESSION['telephone'] = $selectUsername['telephone_port'];
+
         
         if ($selectUsername['identifiant'] == 'administrateur'){
             $_SESSION['admin'] = 1;
