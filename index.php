@@ -38,11 +38,11 @@
     if (isset($_SESSION['id']) && $_SESSION['admin'] == 1) {
         ?>
         <div id="dossier_link">
-            <a href="dashboard.php"><img src="resources/img/ra16.png" alt="image" class="dossier"><!-- image par freepik --></a>
+            <a href="dashboard.php"><img src="resources/img/my_computer.png" alt="image" class="dossier"><!-- image par freepik --></a>
             <a href="dashboard.php"><h1 id="titre" class="titre">Dashboard</h1></a>
         </div>
         <div id="dossier_link">
-            <a href="notepad.php"><img src="resources/img/ra16.png" alt="image" class="dossier"></a>
+            <a href="notepad.php"><img src="resources/img/editor.png" alt="image" class="dossier"></a>
             <a href="notepad.php"><h2 id="titre" class="titre">Notepad</h2></a>
         </div>
         <?php
