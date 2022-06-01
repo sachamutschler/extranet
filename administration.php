@@ -50,11 +50,22 @@ include('head.php');
     if (!isset($_SESSION['identifiant'])) {
         header("Location: index-copy.php");
     }
-    $identifiant = htmlspecialchars($_POST['nom_dashboard']);
+
+    $identifiant = $_POST['nom_dashboard'];
+
+    if ($identifiant = $_POST['nom_dashboard']) {
+        $identifiant = htmlspecialchars($_POST['nom_dashboard']);
+    }
+    else {
+        $identifiant = htmlspecialchars($_SESSION['nom_dashboard']);
+    }
+    /* $identifiant = $_POST['nom_dashboard']; */
+    $_SESSION['nom_dashboard'] = $identifiant;
 
     $select = $conn->prepare('SELECT * FROM user WHERE identifiant = :identifiant');
-    $select->bindValue(':identifiant', $identifiant, PDO::PARAM_STR);
+    $select->bindValue(':identifiant', $_SESSION['nom_dashboard'], PDO::PARAM_STR);
     $select->execute();
+    $affiche_select = $select->fetch();
 
 
     //form to edit the user's data
@@ -65,31 +76,31 @@ include('head.php');
         echo '<div class="div-form-user-left-top">';
         echo '<div class="div-form-user-left-top-left">';
         echo '<label for="identifiant">Identifiant</label>';
-        echo '<input type="text" name="identifiant" id="identifiant" value="' . $select->fetch()['1'] . '">';
+        echo '<input type="text" name="identifiant" id="identifiant" value="' . $affiche_select['identifiant'] . '">';
         echo '</div>';
         echo '<div class="div-form-user-left-top-right">';
         echo '<label for="nom">Nom</label>';
-        echo '<input type="text" name="nom" id="nom" value="' . $select->fetch()['3'] . '">';
+        echo '<input type="text" name="nom" id="nom" value="' . $affiche_select['nom'] . '">';
         echo '</div>';
         echo '</div>';
         echo '<div class="div-form-user-left-bottom">';
         echo '<label for="prenom">Prénom</label>';
-        echo '<input type="text" name="prenom" id="prenom" value="' . $select->fetch()[4] . '">';
+        echo '<input type="text" name="prenom" id="prenom" value="' . $affiche_select['prenom'] . '">';
         echo '</div>';
         echo '</div>';
         echo '<div class="div-form-user-right">';
         echo '<div class="div-form-user-right-top">';
         echo '<label for="email">Email</label>';
-        echo '<input type="text" name="email" id="email" value="' . $select->fetch()[5] . '">';
+        echo '<input type="text" name="email" id="email" value="' . $affiche_select['mail'] . '">';
         echo '</div>';
         echo '<div class="div-form-user-right-bottom">';
         echo '<label for="password">Mot de passe</label>';
-        echo '<input type="password" name="password" id="password" value="' . $select->fetch()[2] . '">';
+        echo '<input type="password" name="password" id="password" value="' . $affiche_select['mot_de_passe'] . '">';
         echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '<div class="div-form-user-submit">';
-        echo '<input type="submit" value="Modifier">';
+        echo '<input type="submit" name="submit" value="Modifier">';
         echo '</div>';
         echo '</div>';
         echo '</form>';
@@ -97,6 +108,24 @@ include('head.php');
 
     }
 
+    //if submit is clicked, update the user's data
+
+    if (isset($_POST['submit'])) {
+        $identifiant = htmlspecialchars($_POST['identifiant']);
+        $nom = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+
+        $update = $conn->prepare('UPDATE user SET identifiant = :identifiant, nom = :nom, prenom = :prenom, mail = :email, mot_de_passe = :password WHERE identifiant = :identifiant');
+        $update->bindValue(':identifiant', $identifiant, PDO::PARAM_STR);
+        $update->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $update->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+        $update->bindValue(':email', $email, PDO::PARAM_STR);
+        $update->bindValue(':password', $password, PDO::PARAM_STR);
+        $update->execute();
+        header("Location: administration.php");
+    }
 
 
 
