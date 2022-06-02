@@ -36,7 +36,7 @@ include('head.php');
                 </div>
             </div>
             <div class="div2-navbar-dossier">
-                <div class="div-retour" onclick="window.location.href='e5.php'">
+                <div class="div-retour" onclick="window.location.href='#'">
                     <img src="resources/img/redo.png" class="">
                     <p>Précédente</p>
                 </div>
@@ -51,8 +51,8 @@ include('head.php');
         if ($_SESSION['identifiant'] == 'administrateur') {
             $users = $conn->query('SELECT * FROM user');
             while ($user = $users->fetch()) {
-                echo '<form action="administration.php" method="post">';
-                echo '<input type="submit" name="nom_dashboard" value="' . $user['identifiant'] . '">';
+                echo '<form action="administration.php" method="post" class="">';
+                echo '<input type="submit" name="nom_dashboard" class="form-list-users" value="' . $user['identifiant'] . '">';
                 echo '</form>';
                 
             }

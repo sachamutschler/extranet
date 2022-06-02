@@ -1,0 +1,605 @@
+body{
+    background-image: url("../img/windows-xp.jpg");
+    margin: 0;
+    background-origin: content-box;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 95%;
+}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+/*INITIAL LOADER STYLES*/
+.loader-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+}
+
+.logo {
+    width: 220px;
+    margin: 50px auto;
+}
+
+.logo p {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-top {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.logo-top::after {
+    content: "\00a9";
+    font-size: 10px;
+    position: relative;
+    top: -5px;
+    margin-left: 2px;
+}
+
+.logo-middle {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.logo-middle span {
+    font-size: 22px;
+    display: inline-block;
+    vertical-align: top;
+    color: #FF6821;
+    margin-top: -8px;
+}
+
+.logo-bottom {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-left: 5px !important;
+}
+
+.loader {
+    width: 150px;
+    height: 18px;
+    border: 2px solid #b2b2b2;
+    border-radius: 7px;
+    margin: 0 auto;
+    padding: 2px 1px;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.loader span {
+    width: 9px;
+    height: 100%;
+    background: linear-gradient(to bottom, #2838c7 0%, #5979ef 17%, #869ef3 32%, #869ef3 45%, #5979ef 59%, #2838c7 100%);
+    display: inline-block;
+    margin-right: 2px;
+    animation: loader 2s infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes loader {
+    from {
+        transform: translate(-30px)
+    }
+
+    to {
+        transform: translate(150px)
+    }
+}
+.loader-wrapp {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    z-index: 99999;
+}
+
+
+
+/* Desktop screen */
+
+
+
+.dossier{
+    width: 50px;
+}
+.titre{
+    font-size: medium;
+    color: white;
+    text-shadow: 1px 1px black;
+
+}
+a{
+    text-decoration: none;
+}
+#dossier_link{
+    text-align: center;
+    margin-top: 5%;
+    width: fit-content;
+    margin-left: 5%;
+}
+
+
+
+/* NAVBAR  */
+
+#navbar{
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(180deg, #63a9f5 0%, #2357d4 15%, rgba(16, 53, 142, 1) 90%);
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 9999 !important;
+}
+.logo-windows{
+    width: 40px;
+    margin-right: 10px;
+}
+.sous-menu{
+    width: 100%;
+}
+.ligne{
+    background-color: blue;
+    color: white;
+}
+.conteneur-menu{
+    bottom: 0;
+    position: fixed;
+    margin-bottom: 35px;
+}
+.logo-vert{
+    width: 155px;
+    background-image: linear-gradient(180deg, #85bb84 0%, #459b43 10%, #419444 30%, #3bac3a 70%, #459b43 90%);
+
+    display: flex;
+    border-bottom-right-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    height: 40px;
+    color: white;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 25px;
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0px;
+}
+.start{
+    color: white;
+    font-size: large;
+    margin: auto;
+}
+
+/* DOSSIER */
+
+.fichier{
+    background-color: white;
+    width: 50%;
+    margin-left: 25%;
+    height: 600px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 3%;
+    overflow: auto;
+}
+.changement{
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+}
+.fichier_titre{
+    color: aliceblue;
+    margin: auto;
+}
+.div_fichier_titre{
+    margin-top: 10px;
+}
+.fichier_etc{
+    display: flex;
+    width: 25%;
+}
+
+.dossier_navbar{
+    width: 10%;
+    color: white;
+    background-color: blue;
+}
+/*NavBar Dossier */
+
+.navbar-dossier{
+    display: flex;
+    list-style-type: none;
+    font-size: medium;
+    width: 85%;
+    height: 65%;
+    justify-content: flex-start;
+    border-right: gainsboro solid;
+    margin-left: -30px;
+}
+li a {
+    color: black;
+    font-size: smaller;
+}
+.div-navbar-dossier{
+    width: 98%;
+    height: 45px;
+    border-bottom: gainsboro solid;
+    margin-left: 1%;
+    margin-top: -10px;
+    display: flex;
+}
+.navbar-dossier li {
+    margin-right: 4%;
+}
+iframe{
+    width: 97%;
+    height: 94%;
+    margin-left: 1%;
+}
+.logo-nav-dossier{
+    height: 30px;
+    width: 35px;
+    margin-top: 13px;
+    margin-left: 50%;
+}
+.div-logo-nav{
+    height: 100%;
+    width: 10%;
+}
+.retour{
+    border-right: gainsboro solid;
+    height: 40px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.div-retour{
+    display: flex;
+    height: 40px;
+    border-right: gainsboro solid;
+    padding-top: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.div-retour-unable{
+    display: flex;
+    height: 40px;
+    border-right: gainsboro solid;
+    padding-top: 5px;
+    padding-right: 5px;
+    color: rgb(152, 152, 152);
+}
+.div2-navbar-dossier{
+    margin-top: 0%;
+    border-bottom: gainsboro solid;
+    margin-left: 1%;
+    width: 98%;
+    display: flex;
+
+}
+/* Menu Gestion Dossier */
+
+.cont-gestion-dossier{
+    display: flex;
+    height: 95%;
+}
+.sommaire{
+    background: #718DDF;
+    margin-left: 4px;
+    height: 100%;
+}
+.cont-gestion-dossier h4 {
+    font-size: medium;
+    text-align: center;
+}
+.sous-titre-dossier{
+    background-color: azure;
+    color: #225cc5;
+    margin-top: -1px;
+    border: azure solid 0px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    width: 101%;
+    margin-bottom: 0%;
+}
+
+.div-sommaire-dossier{
+    width: 80%;
+    margin: auto;
+    border: azure solid 1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-top: 5%;
+}
+.prgs{
+    color: #225cc5;
+    background-color: #D7DEF8;
+    height: 100px;
+    padding-top: 1%;
+    width: 101%;
+    padding-bottom: 30%;
+}
+.detail{
+    background-color: #D7DEF8;
+    height: 50px;
+    padding-top: 1px;
+    width: 101%;
+}
+.img-ligne{
+    height: 19px;
+    padding-top: 8px;
+}
+.ligne-dossier{
+    display: flex;
+    padding-left: 5%;
+}
+.ligne-dossier p {
+    padding-left: 5%;
+}
+.titre-liste-dossier{
+    border-bottom: #ABC5DD solid 2px;
+    font-size: small;
+    padding-left: 2%;
+}
+.ligne-fichier-dossier{
+    width: 29%;
+    text-align: center;
+    margin-bottom: 15%;
+    cursor: pointer;
+}
+.liste-dossier{
+    width: 55%;
+    padding-left: 3px;
+}
+.icon-list{
+    height: 45px;
+}
+.column-dossier{
+    width: 50%;
+    padding-left: 5%;
+    font-weight: bolder;
+}
+.double-column{
+    display: flex;
+    overflow-y: auto;
+}
+.double-column a {
+    color: #000;
+}
+
+/* Navbar bleu clair */
+
+.blur-right-bar {
+    width: 144px;
+    display: flex;
+    align-items: center;
+    background: #0F8AE7;
+    background-image: linear-gradient(180deg, #63a9f5 0%, #0F8AE7 90%, #63a9f5 100%);
+    padding-left: 10px;
+}
+
+.blur-right-bar-applications {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.blur-right-bar-applications li {
+    list-style-type: none;
+    display: block;
+    width: 20px;
+    margin-right: 10px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.blur-right-bar-applications li img {
+    display: block;
+    width: 100%;
+}
+
+.time {
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+/* CMD */
+
+.cmd{
+    height: 96%;
+}
+.cmd-core{
+    height: 95%;
+}
+
+/* Présentation BTS */
+
+.intro-bts{
+    border: #225cc5 solid;
+    border-radius: 15px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.bts-sisr{
+    border: #225cc5 solid;
+    border-radius: 15px;
+    width: 40%;
+    margin-left: 4%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.bts-desc{
+    display: flex;
+    text-align: center;
+}
+.bts-slam{
+    border: #225cc5 solid;
+    border-radius: 15px;
+    width: 40%;
+    margin-left: 4%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.bts{
+    text-align: center;
+}
+
+/* Page veille Techno */
+.text-veille{
+    padding-left: 5%;
+}
+/* Page à propos*/
+.photo{
+    height: 150px;
+    padding-left: 10%;
+}
+.text-about{
+    padding-left: 5%;
+}
+.certifs{
+    display: flex;
+}
+
+/* Notepad */
+
+.tchat{
+    width: 98%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+}
+.form-notepad{
+    width: 98%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+}
+.notepad-window{
+    background: white !important;
+}
+
+/* Page d'administration */
+
+.form-admin{
+    width: 98%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+}
+
+/* Page dashboard */
+
+.form-list-users{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    border-radius: 0px;
+}
+
+/* Page administration des utilisateurs */
+
+.form-admin-users{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 0px;
+}
+.div-form-user{
+    display: flex;
+    justify-content: space-between;
+}
+.div-form-user input{
+    width: 70%;
+}
+.div-form-user-submit input{
+    margin-top: 2%;
+    width: 20%;
+    border-radius: 0px;
+}
+
+
+/* HOVER */
+.blur-right-bar-applications li:hover {
+    list-style-type: none;
+    display: block;
+    width: 20px;
+    background: rgba(210, 210, 210, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+.logo-vert:hover{
+    opacity: 90%;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+.dossier:hover{
+    opacity: 90%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+button:focus{
+    outline: none !important;
+    outline-offset: 0 !important;
+}
+a:hover{
+    opacity: 90%;
+}
+/* li a:hover {
+    background: rgb(167, 167, 167);
+} */
+a:focus{
+    outline: none !important;
+}
+body::-webkit-scrollbar-thumb {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #c8d6fb;
+    background-size: 7px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    box-shadow: inset -3px 0 #bad1fc, inset 1px 1px #b7caf5;
+}
+
+@media screen and (max-width: 750px) {
+    
+    .fichier{
+        width: 100%;
+        margin-left: 0;
+        height: 656px;
+        margin-top: 0;
+    }
+    .sommaire{
+        height: 100% !important;
+    }
+}
+@media screen and (max-width: 365px) {
+    
+    .bts-sisr h3 {
+        font-size: small;
+    }
+    .bts-sisr{
+        height: 100%;
+    }
+    .bts-slam h3 {
+        font-size: small;
+    }
+    .bts-slam{
+        height: 100%;
+    }
+}

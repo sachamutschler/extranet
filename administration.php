@@ -36,7 +36,7 @@ include('head.php');
         </div>
     </div>
     <div class="div2-navbar-dossier">
-        <div class="div-retour" onclick="window.location.href='e5.php'">
+        <div class="div-retour" onclick="window.location.href='dashboard.php'">
             <img src="resources/img/redo.png" class="">
             <p>Précédente</p>
         </div>
@@ -51,16 +51,16 @@ include('head.php');
         header("Location: index-copy.php");
     }
 
-    $identifiant = $_POST['nom_dashboard'];
+    if (isset($_POST['nom_dashboard'])){
+        $identifiant = $_POST['nom_dashboard'];
+        $_SESSION['nom_dashboard'] = $identifiant;
+    }
+    if(!isset($_SESSION['nom_dashboard'])){
+        $_SESSION['nom_dashboard'] = $_SESSION['identifiant'];
 
-    if ($identifiant = $_POST['nom_dashboard']) {
-        $identifiant = htmlspecialchars($_POST['nom_dashboard']);
     }
-    else {
-        $identifiant = htmlspecialchars($_SESSION['nom_dashboard']);
-    }
-    /* $identifiant = $_POST['nom_dashboard']; */
-    $_SESSION['nom_dashboard'] = $identifiant;
+
+
 
     $select = $conn->prepare('SELECT * FROM user WHERE identifiant = :identifiant');
     $select->bindValue(':identifiant', $_SESSION['nom_dashboard'], PDO::PARAM_STR);
@@ -70,37 +70,30 @@ include('head.php');
 
     //form to edit the user's data
     if (isset($_SESSION['identifiant'])) {
-        echo '<form action="administration.php" method="post">';
+        echo '<form action="administration.php" method="post" class="form-admin-users">';
         echo '<div class="div-form-user">';
-        echo '<div class="div-form-user-left">';
-        echo '<div class="div-form-user-left-top">';
-        echo '<div class="div-form-user-left-top-left">';
         echo '<label for="identifiant">Identifiant</label>';
         echo '<input type="text" name="identifiant" id="identifiant" value="' . $affiche_select['identifiant'] . '">';
         echo '</div>';
-        echo '<div class="div-form-user-left-top-right">';
+        echo '<div class="div-form-user">';
         echo '<label for="nom">Nom</label>';
         echo '<input type="text" name="nom" id="nom" value="' . $affiche_select['nom'] . '">';
         echo '</div>';
-        echo '</div>';
-        echo '<div class="div-form-user-left-bottom">';
+        echo '<div class="div-form-user">';
         echo '<label for="prenom">Prénom</label>';
         echo '<input type="text" name="prenom" id="prenom" value="' . $affiche_select['prenom'] . '">';
         echo '</div>';
-        echo '</div>';
-        echo '<div class="div-form-user-right">';
-        echo '<div class="div-form-user-right-top">';
+        echo '<div class="div-form-user">';
         echo '<label for="email">Email</label>';
         echo '<input type="text" name="email" id="email" value="' . $affiche_select['mail'] . '">';
         echo '</div>';
-        echo '<div class="div-form-user-right-bottom">';
+        echo '<div class="div-form-user">';
         echo '<label for="password">Mot de passe</label>';
         echo '<input type="password" name="password" id="password" value="' . $affiche_select['mot_de_passe'] . '">';
         echo '</div>';
-        echo '</div>';
-        echo '</div>';
         echo '<div class="div-form-user-submit">';
         echo '<input type="submit" name="submit" value="Modifier">';
+        echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '</form>';
@@ -124,7 +117,8 @@ include('head.php');
         $update->bindValue(':email', $email, PDO::PARAM_STR);
         $update->bindValue(':password', $password, PDO::PARAM_STR);
         $update->execute();
-        header("Location: administration.php");
+        $identifiant = htmlspecialchars($_POST['identifiant']);
+
     }
 
 
